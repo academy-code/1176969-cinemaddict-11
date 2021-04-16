@@ -270,6 +270,7 @@ Response:
 
 * Status: 401 Unauthorized
 * Body: структура AuthorizationError<br />
+
 **PUT /movies**<br />
 Выставление рейтинга, добавление в избранное.
 
@@ -287,6 +288,7 @@ Request:
 Response:
 * Status: 200 OK
 * Body: Структура вида Movie<br />
+
 **Синхронизация с сервером `/movies/sync`**<br />
 Этот метод потребуется для реализации дополнительного задания лекции 9.
 
