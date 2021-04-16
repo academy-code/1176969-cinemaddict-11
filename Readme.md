@@ -159,7 +159,7 @@
 * Today;
 * Week;
 * Month;
-* Year;
+* Year; <br />
 При смене периода диаграмма перерисовывается, а количественные показатели пересчитываются.
 
 Если для статистики недостаточно данных (например, пользователь ничего не успел посмотреть), то для числовых значений статистики выводится «0», а для текстовых (Любимый жанр) ничего не показывается. Диаграмма также не отображается.
@@ -173,7 +173,7 @@
 При возникновении ошибки в момент отправки комментария, форма, содержащая текст комментария должна быть разблокирована и к ней применяется эффект «покачивание головой». Стили для эффекта есть в проекте.
 Обновление любого элемента в DOM происходят только после успешного выполнения запроса на сервере.
 ###### 1.10.1 Ресурсы
-**Структуры данных**
+**Структуры данных**<br />
 LocalComment:
 ```json
 {
@@ -201,7 +201,7 @@ Movie:
 {
   "id": "0",
   "comments": [
-    $Comment.id$, $Comment.id$
+    "$Comment.id$", "$Comment.id$"
   ],
   "film_info": {
     "title": "A Little Pony Without The Carpet",
@@ -248,8 +248,8 @@ NotFoundError:
   "message": "Not found"
 }
 ```
-**Фильмы `/movies`**
-**GET /movies**
+**Фильмы `/movies`**<br />
+**GET /movies**<br />
 Код ответов
 * 200 OK
 * 401 Unauthorized
@@ -269,11 +269,11 @@ Request:
 Response:
 
 * Status: 401 Unauthorized
-* Body: структура AuthorizationError
-**PUT /movies**
+* Body: структура AuthorizationError<br />
+**PUT /movies**<br />
 Выставление рейтинга, добавление в избранное.
 
-Обратите внимание, изменять можно только пользовательскую информацию. То есть то, что находится внутри поля user_details.
+Обратите внимание, изменять можно только пользовательскую информацию. То есть то, что находится внутри поля `user_details`.
 
 Код ответов
 * 200 OK
@@ -286,8 +286,8 @@ Request:
 * Headers: Authorization: Basic er883jdzbdw
 Response:
 * Status: 200 OK
-* Body: Структура вида Movie
-**Синхронизация с сервером `/movies/sync`**
+* Body: Структура вида Movie<br />
+**Синхронизация с сервером `/movies/sync`**<br />
 Этот метод потребуется для реализации дополнительного задания лекции 9.
 
 Пример:
@@ -301,11 +301,11 @@ Response:
 * Body:
 ```json
 {
-  "updated": [$Movie$, $Movie$]
+  "updated": ["$Movie$", "$Movie$"]
 }
 ```
-**Комментарии `/comments/:film_id`**
-**GET /comments/: film_id**
+**Комментарии `/comments/:film_id`**<br />
+**GET /comments/: film_id**<br />
 Получение комментариев к фильму.
 
 Код ответов:
@@ -319,8 +319,8 @@ Request:
 * Headers: Authorization: Basic er883jdzbdw
 Response:
 * Status: 200 OK
-* Body: Массив, содержащий элементы вида `Comment`
-**POST `/comments/: film_id`**
+* Body: Массив, содержащий элементы вида `Comment`<br />
+**POST `/comments/: film_id`**<br />
 Создание нового комментария к фильму.
 
 Код ответов:
@@ -335,8 +335,8 @@ Request:
 * Body: Структура вида `LocalComment`
 Response:
 * Status: 200 OK
-* Body: Структура вида { movie: `Movie`, comments: [`Comment`, `Comment`] }
-**DELETE `/comments/: comment_id`**
+* Body: Структура вида { movie: `Movie`, comments: [`Comment`, `Comment`] }<br />
+**DELETE `/comments/: comment_id`**<br />
 Удаление существующего комментария.
 
 Код ответов:
